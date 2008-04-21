@@ -1,0 +1,21 @@
+# ------------------------ Databases ------------------------ 
+#
+# Local login
+local:     &local
+ adapter:  mysql
+ host:     localhost
+ username: root
+ password: 
+
+local_dev: &local_dev
+  <<:       *local
+  database: mole_dev
+  
+local_test: &local_test
+  <<: *local
+  database: mole_test
+
+# ------------------------ Environments ------------------------ 
+#  
+development: *local_dev 
+test:        *local_test

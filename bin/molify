@@ -1,0 +1,64 @@
+#!/usr/bin/env ruby            
+require 'optparse'
+
+require File.expand_path(
+    File.join(File.dirname(__FILE__), '..', 'lib', 'mole') )
+    
+require 'mole/db/migrate'
+
+module Mole
+  class Molify  
+    # Performs db migration when the MOle is to be used in a persistent mode.
+    def initialize( argv=ARGV )   
+      option_parser = default_option_parser 
+      option_parser.parse!(argv)
+      puts options.inspect
+      ::Mole::Db::Migrate.new( options ).apply
+    end                  
+            
+    # access the options
+    def options  #:nodoc:
+      if not @options then      
+        @options = OpenStruct.new 
+        # Unless specified attempt to lookup config/database.yml
+        @options.configuration = File.join( Dir.pwd, %w[config database.yml] )
+        # Unless specified assumes test env
+        @options.environment   = "test"    
+        # Unless specficied migrates up
+        @options.direction     = :up
+      end
+      return @options
+    end
+
+    def default_option_parser #:nodoc:
+      OptionParser.new do |op|
+        op.separator ""
+        op.separator "Molify options"
+
+        op.on( "-c", "--config FILE", "The location of the database configuration file." ) do |db|
+          options.configuration = db
+        end
+
+        op.on("-e", "--env ENV", "The environment to run in." ) do |env|
+          options.environment = env
+        end
+        
+        op.on("-u", "--up", "Install MOle related tables") do |dir|
+          options.direction= :up
+        end
+
+        op.on("-d", "--down", "Uninstall MOle related tables") do |dir|
+          options.direction= :down
+        end
+
+        op.separator ""
+      end
+    end   
+  end
+end  
+
+Mole::Molify.new(ARGV)
+
+
+
+    

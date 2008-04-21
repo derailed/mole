@@ -1,0 +1,69 @@
+                                                  #
+# ------------------------ Databases ------------------------ 
+#
+
+# Production read-only
+read_only: &read_only
+  adapter:  mysql
+  host:     10.10.12.100
+  database: ci_sentiment_db
+  username: ciro  
+  password: ciro
+
+# Production writable
+writable: &writable
+ adapter: mysql
+ host:     10.10.12.101
+ database: ci_sentiment_db
+ username: ciprod
+ password: ciprod
+
+# Remote development database
+dev2: &dev2
+ adapter:  mysql
+ host:     dev2
+ encoding: utf8
+ database: ci_sentiment_db
+ username: root  
+ password: alchem1st
+
+# CC test database
+cc: &cc
+ adapter:  mysql
+ host:     10.10.14.105
+ encoding: utf8
+ database: sentiment_test
+ username: root  
+ password: alchem1st
+
+# Local login
+local: &local
+ adapter:  mysql
+ host:     localhost
+ username: root
+ password: 
+
+local_dev: &local_dev
+  <<: *local
+  database: sentiment_dev
+  
+local_test: &local_test
+  <<: *local
+  database: sentiment_test
+ 
+yahoo: &yahoo
+  adapter: mysql
+  database: ci_yahoo_db
+  host: 10.10.12.104
+  username: ciprod
+  password: ciprod
+#
+# ------------------------ Environments ------------------------ 
+#  
+development:      *local_dev 
+test:             *local_test
+beta:             *dev2
+production:       *writable
+cc:               *cc
+yahoo_production: *yahoo
+production_ro:    *read_only

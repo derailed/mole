@@ -1,0 +1,17 @@
+== 1.0.0 / 2008-02-04
+
+* 1 Initial drop
+  * Converted from rails plugin into gem
+  * Retrofited to work with pure ruby, merb and rails env
+
+== 1.0.1 / 2008-02-04
+
+* 1 Documentation enhancements
+  
+== 1.0.2 / 2008-02-04
+
+* 1 Added Snitch support
+
+== 1.0.3 / 2008-02-05
+
+* 1 Bug Fixes

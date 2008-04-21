@@ -1,0 +1,20 @@
+mole version 1.0.2
+    by Fernand Galiana
+    http://mole.rubyforge.org
+
+== DESCRIPTION
+
+A flexible way to track user's interactions within your ruby web applications
+
+== CHANGES
+
+* 1 MOle as a gem
+  * Birthday!
+  
+* 1.0.5 Various enhancements
+  * Broke down the initialization and loading of the configuration to better
+    support rails apps.
+  * Ability to load multiple MOle configurations files via directory configuration.
+  * Update docs and sample apps
+  * Added test cases
+
