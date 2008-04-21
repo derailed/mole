@@ -1,0 +1,643 @@
+
+
+Processing Base#index (for 127.0.0.1 at 2008-03-24 10:51:49) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {}
+
+
+MissingSourceFile (no such file to load -- mole):
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /app/controllers/application.rb:14
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:104:in `require_or_load'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:60:in `depend_on'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:442:in `require_dependency'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:141:in `prepare_application'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:178:in `send!'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:178:in `run_callbacks'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:175:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:175:in `send!'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:175:in `run_callbacks'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:114:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing MoledController#my_action (for 127.0.0.1 at 2008-03-24 10:53:13) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"my_action", "id"=>"10", "controller"=>"moled"}
+Rendering moled/result
+Completed in 0.00241 (414 reqs/sec) | Rendering: 0.00085 (35%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled/my_action/10]
+
+
+Processing MoledController#index (for 127.0.0.1 at 2008-03-24 11:33:02) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"index", "controller"=>"moled"}
+Rendering moled/index
+Completed in 0.00101 (986 reqs/sec) | Rendering: 0.00084 (83%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled]
+
+
+Processing MoledController#my_action (for 127.0.0.1 at 2008-03-24 11:33:05) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"my_action", "id"=>"10", "controller"=>"moled"}
+Rendering moled/result
+Completed in 0.00107 (933 reqs/sec) | Rendering: 0.00075 (70%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled/my_action/10]
+
+
+Processing MoledController#index (for 127.0.0.1 at 2008-03-24 11:33:07) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"index", "controller"=>"moled"}
+Rendering moled/index
+Completed in 0.00038 (2652 reqs/sec) | Rendering: 0.00024 (63%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled]
+
+
+Processing MoledController#my_action (for 127.0.0.1 at 2008-03-24 11:33:08) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"my_action", "id"=>"10", "controller"=>"moled"}
+Rendering moled/result
+Completed in 0.00051 (1949 reqs/sec) | Rendering: 0.00024 (47%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled/my_action/10]
+
+
+Processing MoledController#index (for 127.0.0.1 at 2008-03-24 11:33:11) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"index", "controller"=>"moled"}
+Rendering moled/index
+Completed in 0.00044 (2257 reqs/sec) | Rendering: 0.00028 (62%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled]
+
+
+Processing MoledController#my_slow_action (for 127.0.0.1 at 2008-03-24 11:33:12) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"my_slow_action", "controller"=>"moled"}
+Rendering moled/result
+Completed in 2.00086 (0 reqs/sec) | Rendering: 0.00034 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled/my_slow_action]
+
+
+Processing MoledController#index (for 127.0.0.1 at 2008-03-24 11:33:22) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"index", "controller"=>"moled"}
+Rendering moled/index
+Completed in 0.00040 (2493 reqs/sec) | Rendering: 0.00025 (62%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled]
+
+
+Processing MoledController#my_hosed_action (for 127.0.0.1 at 2008-03-24 11:33:26) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"my_hosed_action", "controller"=>"moled"}
+
+
+RuntimeError (This will hose your app):
+    /app/controllers/moled_controller.rb:22:in `my_hosed_action'
+    (eval):9:in `call'
+    (eval):9:in `my_hosed_action'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/1.8/benchmark.rb:307:in `realtime'
+    (eval):8:in `my_hosed_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing MoledController#my_hosed_action (for 127.0.0.1 at 2008-03-24 13:42:47) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"my_hosed_action", "controller"=>"moled"}
+
+
+RuntimeError (This will hose your app):
+    /app/controllers/moled_controller.rb:22:in `my_hosed_action'
+    (eval):9:in `call'
+    (eval):9:in `my_hosed_action'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/1.8/benchmark.rb:307:in `realtime'
+    (eval):8:in `my_hosed_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing MoledController#my_hosed_action (for 127.0.0.1 at 2008-03-24 13:42:49) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"my_hosed_action", "controller"=>"moled"}
+
+
+RuntimeError (This will hose your app):
+    /app/controllers/moled_controller.rb:22:in `my_hosed_action'
+    (eval):9:in `call'
+    (eval):9:in `my_hosed_action'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/1.8/benchmark.rb:307:in `realtime'
+    (eval):8:in `my_hosed_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing MoledController#index (for 127.0.0.1 at 2008-03-24 18:45:14) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"index", "controller"=>"moled"}
+Rendering moled/index
+Completed in 0.00109 (918 reqs/sec) | Rendering: 0.00090 (82%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled]
+
+
+Processing MoledController#my_action (for 127.0.0.1 at 2008-03-24 18:45:19) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"my_action", "id"=>"10", "controller"=>"moled"}
+Rendering moled/result
+Completed in 0.00134 (748 reqs/sec) | Rendering: 0.00077 (57%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled/my_action/10]
+
+
+Processing MoledController#index (for 127.0.0.1 at 2008-03-24 18:45:26) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"index", "controller"=>"moled"}
+Rendering moled/index
+Completed in 0.00038 (2624 reqs/sec) | Rendering: 0.00024 (63%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled]
+
+
+Processing MoledController#my_slow_action (for 127.0.0.1 at 2008-03-24 18:45:28) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"my_slow_action", "controller"=>"moled"}
+Rendering moled/result
+Completed in 2.00097 (0 reqs/sec) | Rendering: 0.00035 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled/my_slow_action]
+
+
+Processing MoledController#index (for 127.0.0.1 at 2008-03-24 18:45:32) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"index", "controller"=>"moled"}
+Rendering moled/index
+Completed in 0.00038 (2624 reqs/sec) | Rendering: 0.00024 (63%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled]
+
+
+Processing MoledController#my_hosed_action (for 127.0.0.1 at 2008-03-24 18:45:34) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"my_hosed_action", "controller"=>"moled"}
+
+
+RuntimeError (This will hose your app):
+    /app/controllers/moled_controller.rb:22:in `my_hosed_action'
+    (eval):9:in `call'
+    (eval):9:in `my_hosed_action'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/1.8/benchmark.rb:307:in `realtime'
+    (eval):8:in `my_hosed_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing MoledController#my_action (for 127.0.0.1 at 2008-03-24 18:45:46) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"my_action", "id"=>"10", "controller"=>"moled"}
+Rendering moled/result
+Completed in 0.00079 (1270 reqs/sec) | Rendering: 0.00025 (31%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled/my_action/10]
+
+
+Processing MoledController#index (for 127.0.0.1 at 2008-03-24 18:45:50) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"index", "controller"=>"moled"}
+Rendering moled/index
+Completed in 0.00041 (2462 reqs/sec) | Rendering: 0.00027 (66%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled]
+
+
+Processing MoledController#index (for 127.0.0.1 at 2008-03-24 18:51:38) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"index", "controller"=>"moled"}
+Rendering moled/index
+Completed in 0.00248 (403 reqs/sec) | Rendering: 0.00085 (34%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled]
+
+
+Processing MoledController#my_action (for 127.0.0.1 at 2008-03-24 18:51:48) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"my_action", "id"=>"10", "controller"=>"moled"}
+Rendering moled/result
+Completed in 0.00088 (1140 reqs/sec) | Rendering: 0.00078 (89%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled/my_action/10]
+
+
+Processing MoledController#my_action (for 127.0.0.1 at 2008-03-24 18:54:29) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"my_action", "id"=>"10", "controller"=>"moled"}
+Rendering moled/result
+Completed in 0.00244 (410 reqs/sec) | Rendering: 0.00078 (32%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled/my_action/10]
+
+
+Processing MoledController#index (for 127.0.0.1 at 2008-03-24 18:54:38) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"index", "controller"=>"moled"}
+Rendering moled/index
+Completed in 0.00089 (1123 reqs/sec) | Rendering: 0.00080 (90%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled]
+
+
+Processing MoledController#my_action (for 127.0.0.1 at 2008-03-24 18:54:39) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"my_action", "id"=>"10", "controller"=>"moled"}
+Rendering moled/result
+Completed in 0.00033 (3030 reqs/sec) | Rendering: 0.00024 (73%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled/my_action/10]
+
+
+Processing MoledController#index (for 127.0.0.1 at 2008-03-24 18:54:43) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"index", "controller"=>"moled"}
+Rendering moled/index
+Completed in 0.00033 (3068 reqs/sec) | Rendering: 0.00024 (73%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled]
+
+
+Processing MoledController#index (for 127.0.0.1 at 2008-03-24 18:55:29) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"index", "controller"=>"moled"}
+Rendering moled/index
+Completed in 0.00254 (393 reqs/sec) | Rendering: 0.00086 (33%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled]
+
+
+Processing MoledController#index (for 127.0.0.1 at 2008-03-24 18:55:32) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"index", "controller"=>"moled"}
+Rendering moled/index
+Completed in 0.00033 (3039 reqs/sec) | Rendering: 0.00024 (74%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled]
+
+
+Processing MoledController#index (for 127.0.0.1 at 2008-03-24 18:55:34) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"index", "controller"=>"moled"}
+Rendering moled/index
+Completed in 0.00033 (3030 reqs/sec) | Rendering: 0.00025 (74%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled]
+
+
+Processing MoledController#index (for 127.0.0.1 at 2008-03-24 18:56:41) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"index", "controller"=>"moled"}
+Rendering moled/index
+Completed in 0.00330 (302 reqs/sec) | Rendering: 0.00119 (35%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled]
+
+
+Processing MoledController#my_action (for 127.0.0.1 at 2008-03-24 18:56:48) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"my_action", "id"=>"10", "controller"=>"moled"}
+Rendering moled/result
+Completed in 0.00090 (1113 reqs/sec) | Rendering: 0.00081 (90%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled/my_action/10]
+
+
+Processing MoledController#my_action (for 127.0.0.1 at 2008-03-24 18:57:32) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"my_action", "id"=>"10", "controller"=>"moled"}
+Rendering moled/result
+Completed in 0.00246 (406 reqs/sec) | Rendering: 0.00081 (32%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled/my_action/10]
+
+
+Processing MoledController#my_action (for 127.0.0.1 at 2008-03-24 18:57:35) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"my_action", "id"=>"10", "controller"=>"moled"}
+Rendering moled/result
+Completed in 0.00035 (2824 reqs/sec) | Rendering: 0.00026 (73%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled/my_action/10]
+
+
+Processing MoledController#my_action (for 127.0.0.1 at 2008-03-24 18:58:45) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"my_action", "id"=>"10", "controller"=>"moled"}
+Rendering moled/result
+Completed in 0.00243 (412 reqs/sec) | Rendering: 0.00078 (32%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled/my_action/10]
+
+
+Processing MoledController#my_action (for 127.0.0.1 at 2008-03-24 19:00:48) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"my_action", "id"=>"10", "controller"=>"moled"}
+Rendering moled/result
+Completed in 0.00284 (352 reqs/sec) | Rendering: 0.00102 (35%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled/my_action/10]
+
+
+Processing MoledController#my_action (for 127.0.0.1 at 2008-03-24 19:02:43) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"my_action", "id"=>"10", "controller"=>"moled"}
+Rendering moled/result
+Completed in 0.00274 (365 reqs/sec) | Rendering: 0.00107 (39%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled/my_action/10]
+
+
+Processing MoledController#index (for 127.0.0.1 at 2008-03-24 19:05:05) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"index", "controller"=>"moled"}
+Rendering moled/index
+Completed in 0.00248 (403 reqs/sec) | Rendering: 0.00084 (33%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled]
+
+
+Processing MoledController#index (for 127.0.0.1 at 2008-03-24 19:05:43) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"index", "controller"=>"moled"}
+Rendering moled/index
+Completed in 0.06649 (15 reqs/sec) | Rendering: 0.06481 (97%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled]
+
+
+Processing MoledController#index (for 127.0.0.1 at 2008-03-24 19:07:09) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"index", "controller"=>"moled"}
+Rendering moled/index
+Completed in 0.00254 (393 reqs/sec) | Rendering: 0.00086 (33%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled]
+
+
+Processing MoledController#index (for 127.0.0.1 at 2008-03-24 19:08:14) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"index", "controller"=>"moled"}
+Rendering moled/index
+Completed in 0.00251 (399 reqs/sec) | Rendering: 0.00085 (33%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled]
+
+
+Processing MoledController#index (for 127.0.0.1 at 2008-03-24 19:08:59) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"index", "controller"=>"moled"}
+Rendering moled/index
+Completed in 0.00105 (951 reqs/sec) | Rendering: 0.00088 (83%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled]
+
+
+Processing MoledController#my_action (for 127.0.0.1 at 2008-03-24 19:09:05) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"my_action", "id"=>"10", "controller"=>"moled"}
+Rendering moled/result
+Completed in 0.00122 (819 reqs/sec) | Rendering: 0.00084 (68%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled/my_action/10]
+
+
+Processing MoledController#index (for 127.0.0.1 at 2008-03-24 19:09:09) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"index", "controller"=>"moled"}
+Rendering moled/index
+Completed in 0.00042 (2375 reqs/sec) | Rendering: 0.00028 (66%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled]
+
+
+Processing MoledController#my_slow_action (for 127.0.0.1 at 2008-03-24 19:09:10) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"my_slow_action", "controller"=>"moled"}
+Rendering moled/result
+Completed in 2.00087 (0 reqs/sec) | Rendering: 0.00035 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled/my_slow_action]
+
+
+Processing MoledController#index (for 127.0.0.1 at 2008-03-24 19:09:17) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"index", "controller"=>"moled"}
+Rendering moled/index
+Completed in 0.00038 (2637 reqs/sec) | Rendering: 0.00024 (63%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled]
+
+
+Processing MoledController#my_hosed_action (for 127.0.0.1 at 2008-03-24 19:09:19) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"my_hosed_action", "controller"=>"moled"}
+
+
+RuntimeError (This will hose your app):
+    /app/controllers/moled_controller.rb:22:in `my_hosed_action'
+    (eval):9:in `call'
+    (eval):9:in `my_hosed_action'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/1.8/benchmark.rb:307:in `realtime'
+    (eval):8:in `my_hosed_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:112:in `handle_dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:78:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /opt/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /opt/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/webrick_server.rb:62:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/servers/webrick.rb:66
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /opt/local/lib/ruby/gems/1.8/gems/activesupport-2.0.2/lib/active_support/dependencies.rb:496:in `require'
+    /opt/local/lib/ruby/gems/1.8/gems/rails-2.0.2/lib/commands/server.rb:39
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /opt/local/lib/ruby/vendor_ruby/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing MoledController#my_action (for 127.0.0.1 at 2008-03-24 19:11:38) [GET]
+  Session ID: BAh7BzoJdXNlciIMRmVybmFuZCIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxl%0Acjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA%3D%3D--36ba568029172f8358781c2835fa94ce74014688
+  Parameters: {"action"=>"my_action", "id"=>"10", "controller"=>"moled"}
+Rendering moled/result
+Completed in 0.00110 (912 reqs/sec) | Rendering: 0.00079 (71%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled/my_action/10]

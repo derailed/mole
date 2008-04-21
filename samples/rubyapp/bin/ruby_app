@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+require File.join( File.dirname(__FILE__), %w[.. lib fred] )
+require 'rubygems'
+
+# Initializes the MOle. The configuration file will be read from config/mole_conf.rb.
+require 'mole'
+::Mole.initialize( :moleable       => true, 
+                   :application    => "RubyApp",
+                   :perf_threshold => 2,
+                   :mole_config    => File.join( File.dirname(__FILE__), %w[.. config mole_conf.rb]) )
+::Mole.dump
+::Mole.load_mole_configuration                   
+                   
+class Runner
+  def initialize( args )
+    check_args( args )
+    fred = RubyApp::Fred.new
+    case args.first
+      when "--feature": fred.my_feature( 10, "Hello", 20 ) { puts "Hello" }
+      when "--slow"   : fred.my_slow_feature( "World" )
+      when "--hosed"  : fred.my_hosed_feature( "Boom" ) rescue nil
+    end
+  end
+  
+  def check_args( args )
+    print_usage if !args or args.empty? or !["--feature", "--slow", "--hosed"].include?( args.first )
+  end
+  
+  def print_usage
+    puts "Please enter one of the following options: --feature | --slow | --hosed"
+  end
+end
+
+Runner.new( ARGV )
+
