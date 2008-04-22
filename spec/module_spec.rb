@@ -9,12 +9,12 @@ describe Module do
                     
   before( :each ) do
     @blee = Blee.new    
-    CallStackChecker.reset                                                                   
+    CallStackChecker.reset!                                                                 
   end                    
 
   it "should trap mole before handler exceptions" do
     Blee.mole_before( :feature => :crap_out ) { |context, feature, *args| 
-      raise "Before - Something did crap out"
+      raise "LEGIT !! - Before - Something did crap out"
       CallStackChecker.called
     }              
     @blee.crap_out                      
@@ -23,7 +23,7 @@ describe Module do
 
   it "should trap mole after handler exceptions" do
     Blee.mole_after( :feature => :crap_out ) { |context, feature, *args| 
-      raise "After - Something did crap out"
+      raise "LEGIT !! - After - Something did crap out"
       CallStackChecker.called
     }              
     @blee.crap_out                      
@@ -32,7 +32,7 @@ describe Module do
 
   it "should trap mole handler exceptions" do
     Blee.mole_unchecked( :features => [:blee_raise_too] ) { |context, feature, *args| 
-      raise "Unchecked - Something did crap out"
+      raise "-- LEGIT !! - Unchecked - Something did crap out"
       CallStackChecker.called
     }                           
     @blee.blee_raise_too rescue nil                    
@@ -41,7 +41,7 @@ describe Module do
 
   it "should trap a perf handler exception" do
     Blee.mole_perf( :features => [:blee_slow_too] ) do |context, feature, elapsed_time, args, block|
-      raise "Perf - Something did crap out"      
+      raise "---LEGIT !! - Perf - Something did crap out"      
       CallStackChecker.called
     end         
     @blee.blee_slow_too
@@ -124,7 +124,7 @@ describe Module do
       args[3].should       == "Day"            
       CallStackChecker.called
     end         
-    @blee.blee_block( "Hello", "World", "Good", "Day" ) { "Do it already!!" } rescue nil
+    @blee.blee_block( "Hello", "World", "Good", "Day" ) { "Do it already!!" }
     CallStackChecker.should be_called    
   end 
   
@@ -158,7 +158,7 @@ describe Module do
       args[3].should       == "Day"            
       CallStackChecker.called
     end         
-    @blee.blee_block( "Hello", "World", "Good", "Day" ) { "Do it already!!" } rescue nil
+    @blee.blee_block( "Hello", "World", "Good", "Day" ) { "Do it already!!" }
     CallStackChecker.should be_called    
   end 
   
@@ -172,7 +172,7 @@ describe Module do
       elapsed_time.should  > 1      
       CallStackChecker.called
     end         
-    @blee.blee_slow rescue nil
+    @blee.blee_slow
     CallStackChecker.should be_called    
   end 
   

@@ -24,7 +24,7 @@ end
 RubyApp::Fred.mole_unchecked do |context, feature, boom, ret, block, *args|
   ::Mole::Moler.check_it( 
     context                          , 
-    "AppBreaker"                     ,
+    "AppBreaker"                     , # User info
     :controller => context.class.name,
     :feature    => feature           ,
     :boom       => boom              )

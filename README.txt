@@ -26,6 +26,7 @@ instead.
 * Forum:      http://groups.google.com/group/mole-plugin
 * Home:       mole.rubyforge.org
 * Svn:        svn://rubyforge.org/var/svn/mole/mole/trunk
+* Git:        git://github.com/derailed/mole.git
 * Snitch Svn: svn://rubyforge.org/var/svn/mole/snitch/trunk
 * Examples:   svn://rubyforge.org/var/svn/mole/samples
 

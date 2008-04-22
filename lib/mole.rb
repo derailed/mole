@@ -191,7 +191,69 @@ unless defined? Mole
     #
     def self.load_all_moles_relative_to( mole_dir ) #:nodoc:
       search_me = ::File.join( mole_dir, '**', '*.rb')
-      Dir.glob(search_me).sort.each {|rb| logger.debug "---- Loading MOle config '#{rb}'";load rb}
+      Dir.glob(search_me).sort.each {|rb| load rb}
     end
+    
+    # Stolen from inflector
+    def self.camelize(lower_case_and_underscored_word)
+      lower_case_and_underscored_word.to_s.gsub(/\/(.?)/) { "::" + $1.upcase }.gsub(/(^|_)(.)/) { $2.upcase }
+    end
+    
+    # Fetch all ruby files in the given directory and return a cltn of class names
+    def self.find_controller_classes( dir )
+      classes   = []
+      search_me = ::File.expand_path( ::File.join(dir, '*.rb'))
+      Dir.glob(search_me).sort.each {|rb| classes << camelize( File.basename( rb, ".rb") ) }
+      classes
+    end
+    
+    # Automatically setup on perf MOle on any classes within a given directory
+    # NOTE: this call assumes the controller classes are in all in the path    
+    def self.auto_perf( dir, &block )
+      controller_classes = find_controller_classes( dir )
+      controller_classes.each do |class_name|
+        clazz    = Kernel.const_get( class_name )
+        features = ::Mole::Utils::Frameworks.features_for( clazz )
+        clazz.mole_perf( :features => features, &block )
+      end
+    end
+    
+    # Automatically setup MOle untrapped exception on any classes within a given directory
+    # NOTE: this call assumes the controller classes are in all in the path
+    def self.auto_unchecked( dir, &block )
+      controller_classes = find_controller_classes( dir )
+      controller_classes.each do |class_name|
+        clazz    = Kernel.const_get( class_name )
+        features = ::Mole::Utils::Frameworks.features_for( clazz )
+        clazz.mole_unchecked( :features => features, &block )
+      end
+    end
+
+    # Automatically setup MOle after filter on any classes within a given directory
+    # NOTE: this call assumes the controller classes are in all in the path    
+    def self.auto_after( dir, &block )
+      controller_classes = find_controller_classes( dir )
+      controller_classes.each do |class_name|
+        clazz = Kernel.const_get( class_name )
+        features = ::Mole::Utils::Frameworks.features_for( clazz )
+        features.each do |feature|
+          clazz.mole_after( :feature => feature, &block )
+        end
+      end
+    end
+
+    # Automatically setup MOle after filter on any classes within a given directory
+    # NOTE: this call assumes the controller classes are in all in the path    
+    def self.auto_before( dir, &block )
+      controller_classes = find_controller_classes( dir )
+      controller_classes.each do |class_name|
+        clazz = Kernel.const_get( class_name )
+        features = ::Mole::Utils::Frameworks.features_for( clazz )
+        features.each do |feature|
+          clazz.mole_before( :feature => feature, &block )
+        end
+      end
+    end
+    
   end
 end

@@ -35,7 +35,76 @@ describe Mole do
     Mole.dump
   end
   
-  describe "load_mole_configuration" do
+  it "should locate controller classes correctly" do
+    classes = Mole.find_controller_classes( File.join(File.dirname(__FILE__), %w[data] ) )
+    classes.should == %w[Blee]
+  end
+  
+  describe ".auto_xxx" do
+    before( :each ) do
+      ::Mole.reset_configuration!
+      ::Mole.initialize( :perf_threshold => 1, :log_level => :debug )
+      require File.join( File.dirname(__FILE__),  %w[data blee] )
+      Blee.send( :mole_clear! )
+      CallStackChecker.reset! 
+    end
+
+    it "should auto perf a set of controllers correctly" do
+      Mole.auto_perf( File.join(File.dirname(__FILE__), %w[data] ) ) do |context, feature, elapsed_time, ret_val, block, *args|  
+        context.class.should == Blee
+        block.should         be_nil      
+        args.size.should     == 0      
+        elapsed_time.should  > 1      
+        CallStackChecker.called
+      end         
+      Blee.new.blee_slow      
+      CallStackChecker.should be_called    
+      CallStackChecker.reset!
+      Blee.new.blee_slow_too  
+      CallStackChecker.should be_called          
+    end
+    
+    it "should auto check a set of controllers correctly" do
+      Mole.auto_unchecked( File.join(File.dirname(__FILE__), %w[data] ) ) do |context, feature, elapsed_time, block, *args|  
+        context.class.should == Blee
+        feature.should       == "blee_raise"      
+        block.should         be_nil      
+        args.size.should     == 0      
+        CallStackChecker.called
+      end   
+      Blee.new.blee_raise rescue nil
+      CallStackChecker.should be_called    
+    end
+
+    it "should auto before a set of controllers correctly" do
+      Mole.auto_before( File.join(File.dirname(__FILE__), %w[data] ) ) do |context, feature, block, *args|  
+        context.class.should == Blee
+        feature.should       == "blee_no_args"      
+        block.should         be_nil      
+        args.size.should     == 0      
+        CallStackChecker.called
+      end   
+      Blee.new.blee_no_args
+      CallStackChecker.should be_called    
+    end
+
+    it "should auto after a set of controllers correctly" do
+      Mole.auto_after( File.join(File.dirname(__FILE__), %w[data] ) ) do |context, feature, ret_val, block, *args|  
+        context.class.should == Blee
+        feature.should       == "blee_no_args"      
+        ret_val.should       == 10
+        block.should         be_nil      
+        args.size.should     == 0      
+        CallStackChecker.called
+      end   
+      Blee.mole_dump( "After" )
+      Blee.new.blee_no_args
+      CallStackChecker.should be_called    
+    end
+    
+  end
+    
+  describe ".load_mole_configuration" do
     before( :each ) do
       ::Mole.reset_configuration!
     end

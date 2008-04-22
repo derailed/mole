@@ -2,7 +2,7 @@ Sample MOled Ruby App
 
 Launch the app using either of the following cmd line
 
-> cd samples/ruby_app
+> cd samples/rubyapp
 
 
 To mole a regular method

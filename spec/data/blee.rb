@@ -11,7 +11,7 @@ class Blee
   end
   
   def blee_no_args                 
-    # puts ">>> Blee_No_Args"
+    10
   end             
   
   def blee_args( a, b, c, d )

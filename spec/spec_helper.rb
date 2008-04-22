@@ -20,7 +20,7 @@ class CallStackChecker
       @called = 1
     end
     
-    def reset
+    def reset!
       @called = 0
     end
     

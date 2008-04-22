@@ -10,15 +10,14 @@
 # require 'application'
 
 # Watch my_action calls on the Moled Controller
-MoledController.mole_after( :feature => :my_action ) { |context, feature, ret, block, *args|
-  ::Mole.logger.info "!!!!!!!!!!!Hello World!!!!!!!!!!!!!!!!"
+MoledController.mole_after( :feature => :my_action ) do |context, feature, ret, block, *args|
   ::Mole::Moler.mole_it( 
-    context                                            , 
-    feature                                            ,
-    context.session[:user]                             ,
+    context               , 
+    feature               ,
+    context.session[:user],
     :state => context.instance_variable_get( "@state" ),
-    :args  => context.params[:id]                     )
-}
+    :args  => context.params[:id] )
+end
 
 # Use the Mole provided convenience util to pick up all rails actions on the MoledController Class 
 def all_actions() Mole::Utils::Frameworks.rails_actions( MoledController ) end
@@ -26,44 +25,20 @@ def all_actions() Mole::Utils::Frameworks.rails_actions( MoledController ) end
 # Watch action performance on the MoledController
 MoledController.mole_perf( :features => all_actions ) do |context, feature, elapsed_time, ret_val, block, *args|
   ::Mole::Moler.perf_it( 
-    context                                 , 
-    context.session[:user]                  ,
-    :controller   => context.class.name     ,
-    :feature      => feature                ,
-    :args         => args                   ,
+    context                            , 
+    context.session[:user]             ,
+    :controller   => context.class.name,
+    :feature      => feature           ,
+    :args         => args              ,
     :elapsed_time => "%3.3f" % elapsed_time )
 end
 
-puts "!!!!!!!!!!!!!!!"
-%w[MoledController].each do |ctrl|
-  all_actions = Mole::Utils::Frameworks.rails_actions( Kernel.const_get( ctrl ) )
-  clazz.mole_unchecked( :features => all_actions ) do |context, feature, boom, ret_val, block, *args|
-    ::Mole::Moler.check_it( 
-      context                          , 
-      context.session[:user]           ,
-      :controller => context.class.name,
-      :feature    => feature           ,
-      :boom       => boom )
-  end  
-end
-
-# puts ApplicationController.public_instance_methods( false ).inspect
-# 
-# ApplicationController.mole_unchecked( :features => ApplicationController.public_instance_methods( false ) ) do |ctx, feature, boom, block, *args|
-#   ::Mole::Moler.check_it( 
-#     context                          , 
-#     context.session[:user]           ,
-#     :controller => context.class.name,
-#     :feature    => feature           ,
-#     :boom       => boom )
-# end
-
 # Watch for exceptions raise in the MoledController
-# MoledController.mole_unchecked( :features => all_actions ) do |context, feature, boom, ret_val, block, *args|
-#   ::Mole::Moler.check_it( 
-#     context                          , 
-#     context.session[:user]           ,
-#     :controller => context.class.name,
-#     :feature    => feature           ,
-#     :boom       => boom )
-# end
+MoledController.mole_unchecked( :features => all_actions ) do |context, feature, boom, ret_val, block, *args|
+  ::Mole::Moler.check_it( 
+    context                          , 
+    context.session[:user]           ,
+    :controller => context.class.name,
+    :feature    => feature           ,
+    :boom       => boom )
+end

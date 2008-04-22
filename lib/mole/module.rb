@@ -93,7 +93,7 @@ class Module
   # <tt>:interceptor</tt>::   The class name of your interceptor class. If no interceptor block is specified
   # <tt>:method</tt>::        The name of the method to callback the interceptor on
   #                           once an exception condition has been trapped.     
-  def mole_before(opts={}, &interceptor)   
+  def mole_before(opts={}, &interceptor)  
     raise "Missing :feature option" if opts[:feature].nil? or opts[:feature].to_s.empty?
     opts[:interceptor] ||= interceptor
     opts[:method] ||= :call
@@ -133,142 +133,154 @@ class Module
       after_mole_filters[feature] << [opts[:interceptor], opts[:method]]
     end
   end
-          
-  # def dump
-  #   puts "Filters for class <- #{self} ->"
-  #   puts "Before filters"
-  #   before_mole_filters.each_pair do |k,v|
-  #     puts "#{k} --> #{v}"
-  #   end
-  #   puts "After filters"
-  #   after_mole_filters.each_pair do |k,v|
-  #     puts "#{k} --> #{v}"
-  #   end
-  #   puts "Unchecked filters"
-  #   unchecked_mole_filters.each_pair do |k,v|
-  #     puts "#{k} --> #{v}"
-  #   end
-  #   puts "Perf filters"
-  #   perf_mole_filters.each_pair do |k,v|
-  #     puts "#{k} --> #{v}"
-  #   end    
-  # end
+   
+  # ---------------------------------------------------------------------------
+  # Dumps moled feature info       
+  def mole_dump( msg=nil )
+    puts "\n------------------------------------------------------------------"
+    puts "From #{msg}" if msg
+    puts "MOle Info for class <- #{self} ->"
+    puts "\nBefore filters"
+    before_mole_filters.keys.sort.each { |k| puts "\t#{k} --> #{before_mole_filters[k]}" }
+    puts "\nAfter filters"
+    after_mole_filters.keys.sort.each { |k| puts "\t#{k} --> #{after_mole_filters[k]}" }
+    puts "\nUnchecked filters"
+    unchecked_mole_filters.keys.sort.each { |k| puts "\t#{k} --> #{unchecked_mole_filters[k]}" }
+    puts "\nPerf filters"
+    perf_mole_filters.keys.sort.each { |k| puts "\t#{k} --> #{perf_mole_filters[k]}" }    
+    puts "---------------------------------------------------------------------\n"    
+  end
       
   # ===========================================================================
-  # protected
+  private
+
+    # Clear MOle state for this class # Used for testing only
+    def mole_clear!
+      @before_mole_filters = nil  
+      @after_mole_filters = nil  
+      @perf_mole_filters = nil  
+      @unchecked_mole_filters = nil                    
+    end  
     
-  # ---------------------------------------------------------------------------
-  # Holds before filters
-  def before_mole_filters #:nodoc:
-    @before_mole_filters ||= Hash.new{ |h,k| h[k] = [] }
-  end
-
-  # ---------------------------------------------------------------------------
-  # Holds after filters
-  def after_mole_filters #:nodoc:
-    @after_mole_filters ||= Hash.new{ |h,k| h[k] = [] }
-  end
-  
-  # Holds perf around filters   
-  def perf_mole_filters #:nodoc:
-    @perf_mole_filters ||= Hash.new{ |h,k| h[k] = []} 
-  end
-
-  # Holds unchecked exception filters   
-  def unchecked_mole_filters #:nodoc:
-    @unchecked_mole_filters ||= Hash.new{ |h,k| h[k] = []} 
-  end
-        
-  # Attempt to find singleton class method with given name 
-  # TODO Figure out how to get method for static signature...
-  # def find_public_class_method(method)                        
-  #   singleton_methods.each { |name| puts "Looking for #{method}--#{method.class} -- #{name}#{name.class}";return name if name == method }
-  #   nil
-  # end
-
-  # Wrap method call                                
-  # TODO Add support for wrapping class methods ??
-  def wrap( method ) #:nodoc:
-    return if wrapped?( method )  
-    begin
-      between = instance_method( method )
-    rescue
-      # between = find_public_class_method( method )
-      raise "Unable to find moled feature `#{method}" unless(between)
+  # ===========================================================================
+  public
+    
+    # -------------------------------------------------------------------------
+    # Holds before filters
+    def before_mole_filters #:nodoc:    
+      @before_mole_filters ||= Hash.new{ |h,k| h[k] = [] }
     end
-    code = <<-code
-      def #{method}_with_mole (*a, &b)
-        key                 = '#{method}'
-        klass               = self.class
-        between             = klass.wrapped[key]
-        ret_val             = nil
-        klass.apply_before_filters( klass.before_mole_filters[key], self, key, *a, &b )
-        begin                                          
-          elapsed = Benchmark::realtime do 
-            ret_val = between.bind(self).call( *a, &b ) 
-          end   
-          klass.apply_perf_filters( elapsed, klass.perf_mole_filters[key], self, key, ret_val, *a, &b )                              
-        rescue => boom   
-          klass.apply_unchecked_filters( boom, klass.unchecked_mole_filters[key], self, key, *a, &b )
-          raise boom            
-        end                                                                 
-        klass.apply_after_filters( klass.after_mole_filters[key], self, key, ret_val, *a, &b )
-        ret_val
-      end
-    code
-   
-    module_eval                code               
-    alias_method_chain method, "mole" 
-    wrapped[method.to_s]       = between
-  end    
-   
-  def apply_before_filters( filters, clazz, key, *a, &b )          #:nodoc:              
-    begin
-      filters.each { |r,m| r.send( m, clazz, key, b, *a ) }
-    rescue => ca_boom
-      ::Mole.logger.error ">>> Mole Error: Before-Filter -- " + ca_boom
-      # ca_boom.backtrace.each { |l| ::Mole.logger.error l }           
-    end    
-  end
-                       
-  def apply_after_filters( filters, clazz, key, ret_val, *a, &b )   #:nodoc:              
-    begin  
-      filters.each { |r,m| r.send( m, clazz, key, ret_val, b, *a ) }
-    rescue => ca_boom    
-      ::Mole.logger.error ">>> Mole Error: After-Filter -- " + ca_boom
-      # ca_boom.backtrace.each { |l| ::Mole.logger.error l }           
-    end    
-  end
-                       
-  def apply_perf_filters( elapsed, filters, clazz, key, ret_val, *a, &b )       #:nodoc:
-    begin
-      if ( elapsed >= Mole.perf_threshold  )
-        filters.each { |r,m| r.send( m, clazz, key, elapsed, ret_val, b, *a ) }            
-      end
-    rescue => ca_boom
-      ::Mole.logger.error ">>> Mole Error: Perf-Filter -- " + ca_boom
-      # ca_boom.backtrace.each { |l| ::Mole.logger.error l }             
-    end    
-  end
-                       
-  def apply_unchecked_filters( boom, filters, clazz, key, *a, &b ) #:nodoc:
-    begin
-      filters.each { |r,m| r.send( m, clazz, key, boom, b, *a ) }
-    rescue => ca_boom                               
-      ::Mole.logger.error ">>> Mole Error: Unchecked-Filter -- " + ca_boom
-      # ca_boom.backtrace.each { |l| ::Mole.logger.error l }             
-    end                                                                       
-  end
-                          
-  # ---------------------------------------------------------------------------
-  # Log wrapped class
-  def wrapped #:nodoc:
-    @wrapped ||= {}
-  end
 
-  # ---------------------------------------------------------------------------
-  # Check if method has been wrapped
-  def wrapped?(which) #:nodoc:
-    wrapped.has_key?(which.to_s)
-  end       
+    # -------------------------------------------------------------------------
+    # Holds after filters
+    def after_mole_filters #:nodoc:
+      @after_mole_filters ||= Hash.new{ |h,k| h[k] = [] }
+    end
+  
+    # -------------------------------------------------------------------------
+    # Holds perf around filters   
+    def perf_mole_filters #:nodoc:
+      @perf_mole_filters ||= Hash.new{ |h,k| h[k] = []} 
+    end
+
+    # -------------------------------------------------------------------------
+    # Holds unchecked exception filters   
+    def unchecked_mole_filters #:nodoc:
+      @unchecked_mole_filters ||= Hash.new{ |h,k| h[k] = []} 
+    end
+        
+    # -------------------------------------------------------------------------        
+    # Attempt to find singleton class method with given name 
+    # TODO Figure out how to get method for static signature...
+    # def find_public_class_method(method)                        
+    #   singleton_methods.each { |name| puts "Looking for #{method}--#{method.class} -- #{name}#{name.class}";return name if name == method }
+    #   nil
+    # end
+  
+    # -------------------------------------------------------------------------
+    # Wrap method call                                
+    # TODO Add support for wrapping class methods ??
+    def wrap( method ) #:nodoc:
+      return if wrapped?( method )  
+      begin
+        between = instance_method( method )
+      rescue
+        # between = find_public_class_method( method )
+        raise "Unable to find moled feature `#{method}" unless(between)
+      end
+      code = <<-code
+        def #{method}_with_mole (*a, &b)
+          key                 = '#{method}'
+          klass               = self.class
+          between             = klass.wrapped[key]
+          ret_val             = nil
+          klass.apply_before_filters( klass.before_mole_filters[key], self, key, *a, &b ) if klass.before_mole_filters[key]
+          begin                                          
+            elapsed = Benchmark::realtime do 
+              ret_val = between.bind(self).call( *a, &b ) 
+            end   
+            klass.apply_perf_filters( elapsed, klass.perf_mole_filters[key], self, key, ret_val, *a, &b ) if klass.perf_mole_filters[key]
+          rescue => boom   
+            klass.apply_unchecked_filters( boom, klass.unchecked_mole_filters[key], self, key, *a, &b ) if klass.unchecked_mole_filters[key]
+            raise boom            
+          end                                                                 
+          klass.apply_after_filters( klass.after_mole_filters[key], self, key, ret_val, *a, &b ) if klass.after_mole_filters[key]
+          ret_val
+        end
+      code
+   
+      module_eval                code               
+      alias_method_chain method, "mole" 
+      wrapped[method.to_s]       = between
+    end    
+   
+    def apply_before_filters( filters, clazz, key, *a, &b )          #:nodoc:              
+      begin
+        filters.each { |r,m| r.send( m, clazz, key, b, *a ) }
+      rescue => ca_boom
+        ::Mole.logger.error ">>> MOle Failure: Before-Filter -- " + ca_boom
+        ca_boom.backtrace.each { |l| ::Mole.logger.error l }           
+      end    
+    end
+                       
+    def apply_after_filters( filters, clazz, key, ret_val, *a, &b )   #:nodoc:              
+      begin  
+        filters.each { |r,m| r.send( m, clazz, key, ret_val, b, *a ) }
+      rescue => ca_boom    
+        ::Mole.logger.error ">>> MOle Failure: After-Filter -- " + ca_boom
+        ca_boom.backtrace.each { |l| ::Mole.logger.error l }           
+      end    
+    end
+                       
+    def apply_perf_filters( elapsed, filters, clazz, key, ret_val, *a, &b )       #:nodoc:
+      begin
+        if ( elapsed >= Mole.perf_threshold  )
+          filters.each { |r,m| r.send( m, clazz, key, elapsed, ret_val, b, *a ) }            
+        end
+      rescue => ca_boom
+        ::Mole.logger.error ">>> MOle Failure: Perf-Filter -- " + ca_boom
+        ca_boom.backtrace.each { |l| ::Mole.logger.error l }             
+      end    
+    end
+                       
+    def apply_unchecked_filters( boom, filters, clazz, key, *a, &b ) #:nodoc:
+      begin
+        filters.each { |r,m| r.send( m, clazz, key, boom, b, *a ) }
+      rescue => ca_boom                               
+        ::Mole.logger.error ">>> MOle Failure: Unchecked-Filter -- " + ca_boom
+        ca_boom.backtrace.each { |l| ::Mole.logger.error l }             
+      end                                                                       
+    end
+                          
+    # ---------------------------------------------------------------------------
+    # Log wrapped class
+    def wrapped #:nodoc:
+      @wrapped ||= {}
+    end
+
+    # ---------------------------------------------------------------------------
+    # Check if method has been wrapped
+    def wrapped?(which) #:nodoc:
+      wrapped.has_key?(which.to_s)
+    end       
 end
