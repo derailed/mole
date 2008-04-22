@@ -1,0 +1,14 @@
+Sample MOled Merb App
+
+NOTE: You must have merb installed
+
+
+> cd samples/merb_app
+
+Now launch merb
+
+> merb
+
+View the app by using the following url
+
+http://localhost:4000

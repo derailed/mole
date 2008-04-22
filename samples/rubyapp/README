@@ -1,0 +1,22 @@
+Sample MOled Ruby App
+
+Launch the app using either of the following cmd line
+
+> cd samples/ruby_app
+
+
+To mole a regular method
+
+> ./bin/ruby_app --feature
+
+
+
+To mole a slow method
+
+> ./bin/ruby_app --slow
+
+
+
+To mole a hosed method that will throw an uncaught exception
+
+> ./bin/ruby_app --hosed
