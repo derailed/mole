@@ -16,7 +16,7 @@ module Mole
         # If exception is given record the first couple of frames
         if args[:boom]
           args[:trace] = dump_stack( args[:boom] )
-          args[:boom]  = args[:boom].to_s
+          args[:boom]  = truncate( args[:boom].to_s )
         end        
         if ::Mole.persistent?             
           MoleLog.log_it( context, MoleFeature::find_exception_feature( ::Mole.application ), user_id, args )             
@@ -54,10 +54,18 @@ module Mole
         end
       end         
       
+      # Truncate
+      def truncate(text, length = 200, truncate_string = "...")
+        return "" if text.nil?
+        l = length - truncate_string.chars.length
+        text.chars.length > length ? (text.chars[0...l] + truncate_string).to_s : text
+      end
+      
       # dumps partial stack
-      def dump_stack( boom )      
+      def dump_stack( boom )
+        return truncate( boom.backtrace[0] ) if boom.backtrace.size == 1
         buff = boom.backtrace[0...3].join( "-" )
-      end      
+      end  
     end             
   end
 end
