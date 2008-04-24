@@ -2,7 +2,7 @@ module Mole
   module Version
     MAJOR = 1
     MINOR = 0
-    TINY  = 6
+    TINY  = 7
     
     # Returns the version string for the library.
     #

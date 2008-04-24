@@ -17,10 +17,10 @@ end
     :boom       => boom )
 end  
   
-::Mole.auto_mole( File.join( File.dirname(__FILE__), %w[.. data] ) ) do |context, feature, ret, block, *args|
+::Mole.auto_after( File.join( File.dirname(__FILE__), %w[.. data] ) ) do |context, feature, ret, block, *args|
   ::Mole::Moler.mole_it( 
     context     , 
     feature     ,
     "AppBreaker",
-    :args        => context.params[:id] )
+    :args => args )
 end

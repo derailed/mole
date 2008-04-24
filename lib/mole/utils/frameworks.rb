@@ -7,6 +7,12 @@ module Mole
      class Frameworks
        class << self
          
+         # compiles request parameters in a flat list.
+         def flatten_params( context )
+           return nil unless context.respond_to? :params
+           context.params.keys.sort{ |a,b| a.to_s <=> b.to_s }.collect{ |k| "#{k} => #{context.params[k]}" }.join( ", ")
+         end
+         
          # find moleable features for a given class
          def features_for( controller_class )
            # Try rails first

@@ -5,7 +5,16 @@ describe Mole::Utils::Frameworks do
     ::Mole.reset_configuration!
     ::Mole.initialize( :moleable => true )
   end
-         
+
+  describe ".flatten_params" do
+    it "should flatten request parameters correctly" do
+      Mole::Utils::Frameworks.flatten_params( RailsController.new ).should == "action => fred, controller => rails, id => 10"
+    end
+    it "should detect if this is not a controller class" do
+      Mole::Utils::Frameworks.flatten_params( Poro.new ).should be_nil
+    end
+  end
+             
   describe ".features_for" do
     it "should find the correct features for a merb controller" do
       features = Mole::Utils::Frameworks.features_for( MerbController )
@@ -68,6 +77,10 @@ describe Mole::Utils::Frameworks do
   end      
   
   class RailsController 
+    def params
+      { :id => 10, :action => "fred", :controller => "rails" }
+    end
+    
     def self.action_methods
       %w[fred blee]
     end
