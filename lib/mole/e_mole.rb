@@ -55,7 +55,8 @@ module Mole
     alias_method_chain :exception_alerts, :setup
                    
     # dumps partial stack
-    def dump_stack( boom )      
+    def dump_stack( boom )   
+      return boom if boom.is_a? String         
       buff = boom.backtrace[0...3].join( "\r" )
     end
                                         
