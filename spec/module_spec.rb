@@ -12,6 +12,14 @@ describe Module do
     CallStackChecker.reset!                                                                 
   end                    
 
+  it "should handle features with punctuation correctly" do
+    Blee.mole_before( :feature => :get_out? ) { |context, feature, *args| 
+      CallStackChecker.called
+    }              
+    @blee.get_out?
+    CallStackChecker.should be_called    
+  end
+  
   it "should trap mole before handler exceptions" do
     Blee.mole_before( :feature => :crap_out ) { |context, feature, *args| 
       raise "LEGIT !! - Before - Something did crap out"

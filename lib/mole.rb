@@ -203,7 +203,8 @@ unless defined? Mole
     def self.find_controller_classes( dir )
       classes   = []
       search_me = ::File.expand_path( ::File.join(dir, '*.rb'))
-      Dir.glob(search_me).sort.each {|rb| classes << camelize( File.basename( rb, ".rb") ) }
+      # BOZO !! This kind of sucks - need to exclude application controller for rails otherwise class loading error ??
+      Dir.glob(search_me).sort.each {|rb| classes << camelize( File.basename( rb, ".rb") ) unless File.basename( rb, ".rb") == "application" }
       classes
     end
     

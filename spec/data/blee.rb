@@ -12,7 +12,12 @@ class Blee
   
   def blee_no_args                 
     10
-  end             
+  end   
+  
+  # Try some ßpunctuations...
+  def get_out?
+    true
+  end          
   
   def blee_args( a, b, c, d )
     # puts ">>> Blee Many Args #{[a,b,c,d].join( "--" )}"

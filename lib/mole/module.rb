@@ -154,6 +154,11 @@ class Module
   # ===========================================================================
   private
 
+    # Strip out all invalid punctuation
+    def clean_method_name( method )
+      return method.to_s.sub(/([?!=])$/, ''), $1
+    end
+
     # Clear MOle state for this class # Used for testing only
     def mole_clear!
       @before_mole_filters = nil  
@@ -208,8 +213,9 @@ class Module
         # between = find_public_class_method( method )
         raise "Unable to find moled feature `#{method}" unless(between)
       end
+      method_name, punctuation = clean_method_name( method )
       code = <<-code
-        def #{method}_with_mole (*a, &b)
+        def #{method_name}_with_mole#{punctuation} (*a, &b)
           key                 = '#{method}'
           klass               = self.class
           between             = klass.wrapped[key]

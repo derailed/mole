@@ -8,7 +8,7 @@
     :elapsed_time => "%3.3f" % elapsed_time )
 end
 
-::Mole.auto_check( File.join( File.dirname(__FILE__), %w[.. data] ) ) do |context, feature, boom, ret_val, block, *args|
+::Mole.auto_unchecked( File.join( File.dirname(__FILE__), %w[.. data] ) ) do |context, feature, boom, ret_val, block, *args|
   ::Mole::Moler.check_it( 
     context                          , 
     "AppBreaker"                     ,
