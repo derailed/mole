@@ -42,5 +42,5 @@ end
 task 'gem:package' => 'manifest:assert'
 
                 
-depend_on "logging"     , "= 0.7.1"       
+depend_on "logging"     , "= 0.9.0"       
 depend_on "activerecord", "= 2.0.2"

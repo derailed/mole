@@ -1,0 +1,2 @@
+module Mole::EMoleHelper
+end

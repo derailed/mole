@@ -3552,3 +3552,18 @@ RuntimeError (This will hose your app):
     script/server:3
 
 Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing MoledController#index (for 127.0.0.1 at 2008-04-25 00:16:33) [GET]
+  Session ID: 73609523bcea27dd489ca87e1635aa23
+  Parameters: {"action"=>"index", "controller"=>"moled"}
+  [4;36;1mSQL (0.002788)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+Rendering moled/index
+Completed in 0.03061 (32 reqs/sec) | Rendering: 0.03041 (99%) | DB: 0.00279 (9%) | 200 OK [http://localhost/]
+
+
+Processing MoledController#my_action (for 127.0.0.1 at 2008-04-25 00:16:36) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--0f0751604bbf0487482771b88b8dd21a665e5a06
+  Parameters: {"action"=>"my_action", "id"=>"10", "controller"=>"moled"}
+Rendering moled/result
+Completed in 0.01733 (57 reqs/sec) | Rendering: 0.01590 (91%) | DB: 0.00000 (0%) | 200 OK [http://localhost/moled/my_action/10]
