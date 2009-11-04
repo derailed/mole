@@ -1,13 +1,17 @@
 # Feature model - Tracks the various application features in the db.
 class MoleFeature < ActiveRecord::Base
   has_many :mole_logs    
+
+  def to_s
+    self.name
+  end
         
   class << self     
     # famous constants...  
     def all()         "ALL"        ; end
     def exception()   "Exception"  ; end
     def performance() "Performance"; end  
-    
+        
     # find performance feature
     def find_performance_feature( app_name )
       find_or_create_feature( performance, app_name )
@@ -27,7 +31,7 @@ class MoleFeature < ActiveRecord::Base
     def find_moled_application_names
       res = find( :all, 
                   :select => "distinct( app_name )", 
-                  :order  => "name asc" )            
+                  :order  => "app_name" )            
       res.map(&:app_name)             
     end
           
@@ -38,7 +42,7 @@ class MoleFeature < ActiveRecord::Base
       find( :all, 
             :conditions => ["app_name = ?", app_name], 
             :select     => "id, name, context", 
-            :order      => "name asc" )      
+            :order      => "name, id, context" )      
     end
       
     # locates an existing feature or create a new one if it does not exist.

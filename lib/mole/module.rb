@@ -32,8 +32,10 @@ class Module
     opts[:method]      ||= :call             
     opts[:features]    ||= instance_methods( false )
     opts[:features].each do |feature|  
-      wrap feature
-      perf_mole_filters[feature.to_s] << [opts[:interceptor], opts[:method]]
+      if perf_mole_filters[feature.to_s].empty?
+        wrap feature
+        perf_mole_filters[feature.to_s] << [opts[:interceptor], opts[:method]]
+      end
     end    
   end
          
@@ -67,8 +69,10 @@ class Module
     opts[:method]      ||= :call             
     opts[:features]    ||= instance_methods( false )
     opts[:features].each do |feature|  
-      wrap feature
-      unchecked_mole_filters[feature.to_s] << [opts[:interceptor], opts[:method]]
+      if unchecked_mole_filters[feature.to_s].empty?
+        wrap feature
+        unchecked_mole_filters[feature.to_s] << [opts[:interceptor], opts[:method]]
+      end
     end
   end
 
@@ -245,7 +249,7 @@ class Module
         filters.each { |r,m| r.send( m, clazz, key, b, *a ) }
       rescue => ca_boom
         ::Mole.logger.error ">>> MOle Failure: Before-Filter -- " + ca_boom
-        ca_boom.backtrace.each { |l| ::Mole.logger.error l }           
+        ca_boom.backtrace.each { |l| ::Mole.logger.error l }
       end    
     end
                        
@@ -265,16 +269,16 @@ class Module
         end
       rescue => ca_boom
         ::Mole.logger.error ">>> MOle Failure: Perf-Filter -- " + ca_boom
-        ca_boom.backtrace.each { |l| ::Mole.logger.error l }             
+        ca_boom.backtrace.each { |l| ::Mole.logger.error l }
       end    
     end
                        
     def apply_unchecked_filters( boom, filters, clazz, key, *a, &b ) #:nodoc:
       begin
         filters.each { |r,m| r.send( m, clazz, key, boom, b, *a ) }
-      rescue => ca_boom                               
+      rescue => ca_boom
         ::Mole.logger.error ">>> MOle Failure: Unchecked-Filter -- " + ca_boom
-        ca_boom.backtrace.each { |l| ::Mole.logger.error l }             
+        ca_boom.backtrace.each { |l| ::Mole.logger.error l }
       end                                                                       
     end
                           

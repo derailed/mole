@@ -9,7 +9,6 @@ require 'mole'
 require 'mole/version'
                    
 task :default => 'spec:run'
-
 PROJ.name           = 'mole'
 PROJ.authors        = 'Fernand Galiana'
 PROJ.email          = 'fernand@liquidrail.com'
@@ -39,8 +38,10 @@ task :clean do
   FileUtils.rm_rf gem_artifacts if File.exists? gem_artifacts    
 end  
 
-task 'gem:package' => 'manifest:assert'
-
+task 'gem:package'
                 
-depend_on "logging"     , "= 0.9.0"       
-depend_on "activerecord", "= 2.0.2"
+# Dependencies...
+
+depend_on "logging"     , "~> 1.2.2"
+depend_on "activerecord", "~> 2.3.2"
+depend_on "twitter4r"   , "~> 0.3.0"

@@ -5,7 +5,6 @@ class MoledController < ApplicationController
   
   # A plain ol' feature
   def my_action
-    puts "Session #{session.inspect}"
     session[:user] = "Fernand"
     @state         = "Fred"    
     render :template => "moled/result"

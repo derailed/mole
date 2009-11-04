@@ -9,6 +9,7 @@ describe Mole::EMole do
   before( :each ) do      
     ::Mole.reset_configuration!
     ::Mole.initialize( :moleable         => true, 
+                       :log_level        => :warn,
                        :emole_from       => "MOleBeatch@liquidrail.com", 
                        :emole_recipients => ['fernand@liquidrail.com'] )
   end

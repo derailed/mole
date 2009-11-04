@@ -2,8 +2,8 @@ module Mole
   module Version
     MAJOR = 1
     MINOR = 0
-    TINY  = 10
-    
+    TINY  = 15
+  
     # Returns the version string for the library.
     #
     def self.version

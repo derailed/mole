@@ -8,6 +8,14 @@ describe MoleFeature do
                        :log_level   => :debug, 
                        :moleable    => true )
   end
+          
+  it "should find moled application names correctly" do
+    MoleFeature.find_moled_application_names.should be_empty
+    %w[ all performance exception].each do |f|
+      feature = MoleFeature.send( "find_#{f}_feature".to_sym, ::Mole.application )
+    end
+    MoleFeature.find_moled_application_names.should == ["Test"]
+  end
                       
   it "should find or create known features correctly" do
     %w[ all performance exception].each do |f|
@@ -36,13 +44,5 @@ describe MoleFeature do
     MoleFeature.find_or_create_feature( "Fred", ::Mole.application, self.class.name )
     features = MoleFeature.find_features( ::Mole.application )
     features.should have(4).mole_features
-  end     
-  
-  it "should find moled application names correctly" do
-    MoleFeature.find_moled_application_names.should be_empty
-    %w[ all performance exception].each do |f|
-      feature = MoleFeature.send( "find_#{f}_feature".to_sym, ::Mole.application )
-    end
-    MoleFeature.find_moled_application_names.should == ["Test"]
-  end
+  end       
 end

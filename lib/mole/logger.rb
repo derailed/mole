@@ -119,15 +119,13 @@ module Mole
     end 
     
     # mole the bastard - create an entry into MOle log file
-    def log_it( context, feature, user_id, args )
-      args    ||= "no args"                           
+    def log_it( context, feature, user_id, params )
+      params  ||= "no args"                           
       user_id ||= "N/A"             
       ip_addr, browser_type = MoleLog.log_details( context )
-      info = []
-      args.keys.sort { |a,b| a.to_s <=> b.to_s }.each { |k| info << "#{k}=>#{args[k]}" }
       buff = ""
       buff << "[#{ip_addr}/#{browser_type}]--" if ip_addr and browser_type
-      buff << "#{context.class.name}(#{feature}) --- #{user_id} -> #{info.join( ', ' ) }"
+      buff << "#{context.class.name}(#{feature}) --- #{user_id} -> #{params.to_json}"
       self.info(  buff )
     end
   end

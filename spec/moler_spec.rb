@@ -13,6 +13,8 @@ describe Mole::Moler do
                        :logger_name      => "Test", 
                        :log_file         => @io, 
                        :moleable         => true,
+                       :twitter_login    => "moled",
+                       :twitter_pwd      => "fernand~1",
                        :emole_from       => "MOleBeatch@liquidrail.com", 
                        :emole_recipients => ['fernand@liquidrail.com'] )
     @args = { :blee => "Hello", :duh => "World" }
@@ -43,14 +45,25 @@ describe Mole::Moler do
     ::Mole.switch_mode :persistent
     ::Mole::Moler.mole_it( "Test", "fred", 100, @args )
     feature = MoleFeature.find_or_create_feature( "fred", ::Mole.application, "Test".class.name )
-    feature.should_not be_nil     
+    feature.should_not be_nil    
     check_it( feature, 100, @args )
+  end
+
+  it "should log a feature to the db and send a twitt correctly" do             
+    ::Mole.switch_mode :persistent      
+    args = @args.clone
+    args[:twitt] = true
+    ::Mole::Moler.mole_it( "Test", "fred", 100, args )
+    feature = MoleFeature.find_or_create_feature( "fred", ::Mole.application, "Test".class.name )
+    feature.should_not be_nil     
+    check_it( feature, 100, { :twitt => true, :blee => "Hello", :duh => "World" } )
   end
 
   it "should log a feature to the db and send an email correctly" do             
     ::Mole.switch_mode :persistent      
-    @args[:email] = true
-    ::Mole::Moler.mole_it( "Test", "fred", 100, @args )
+    args = @args.clone
+    args[:email] = true
+    ::Mole::Moler.mole_it( "Test", "fred", 100, args )
     feature = MoleFeature.find_or_create_feature( "fred", ::Mole.application, "Test".class.name )
     feature.should_not be_nil     
     check_it( feature, 100, { :email => true, :blee => "Hello", :duh => "World" } )
@@ -59,19 +72,19 @@ describe Mole::Moler do
   it "should log unchecked exceptions to the logger correctly" do   
     ::Mole.switch_mode :transient
     ::Mole::Moler.check_it( self, 100, @args )
-    @io.string[@io.string.index( "---" )..@io.string.size].should == "--- 100 -> blee=>Hello, duh=>World\n"
+    @io.string[@io.string.index( "---" )..@io.string.size].should == "--- 100 -> {\"blee\":\"Hello\",\"duh\":\"World\"}\n"
   end
-
+  
   it "should log perf exception to the logger correctly" do             
     ::Mole.switch_mode :transient
     ::Mole::Moler.perf_it( self, 100, @args )                                  
-    @io.string[@io.string.index( "---" )..@io.string.size].should == "--- 100 -> blee=>Hello, duh=>World\n"    
+    @io.string[@io.string.index( "---" )..@io.string.size].should == "--- 100 -> {\"blee\":\"Hello\",\"duh\":\"World\"}\n"    
   end
-
+  
   it "should mole a feature to the logger correctly" do             
     ::Mole.switch_mode :transient
     ::Mole::Moler.mole_it( "Test", "Fred", 100, @args )                                  
-    @io.string[@io.string.index( "---" )..@io.string.size].should == "--- 100 -> blee=>Hello, duh=>World\n"    
-  end
+    @io.string[@io.string.index( "---" )..@io.string.size].should == "--- 100 -> {\"blee\":\"Hello\",\"duh\":\"World\"}\n"
+   end
   
 end

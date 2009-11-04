@@ -63,6 +63,8 @@ unless defined? Mole
     # <tt>log_level</tt>::        logging level ie :info, :debug, :error, :warn...
     # <tt>email_alerts_to</tt>::  log level email alert recipients.
     # <tt>email_alert_level</tt>:: specifies which log level will trigger email alerts to be sent   
+    # <tt>twitter_login</tt>::    Twitter login either username or email address
+    # <tt>twitter_pwd</tt>::      Twitter password
     def self.initialize( opts={} ) 
       @config = defaults.merge( opts )    
       @config[:email_alerts_to] = @config[:emole_recipients] if @config[:emole_recipients] and !@config[:emole_recipients].empty?
@@ -105,6 +107,11 @@ unless defined? Mole
       config[:emole_recipients]
     end
              
+    # Twitter account information return login, pwd
+    def self.twitter_credentials
+      return config[:twitter_login], config[:twitter_pwd]
+    end
+    
     # Fetch the MOle configuration
     def self.config  #:nodoc:
       @config
@@ -204,7 +211,7 @@ unless defined? Mole
       classes   = []
       search_me = ::File.expand_path( ::File.join(dir, '*.rb'))
       # BOZO !! This kind of sucks - need to exclude application controller for rails otherwise class loading error ??
-      Dir.glob(search_me).sort.each {|rb| classes << camelize( File.basename( rb, ".rb") ) unless File.basename( rb, ".rb") == "application" }
+      Dir.glob(search_me).sort.each {|rb| classes << camelize( File.basename( rb, ".rb") ) unless File.basename( rb, ".rb") == "application_controller" }
       classes
     end
     
